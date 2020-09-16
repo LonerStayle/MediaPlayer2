@@ -1,7 +1,8 @@
-package com.example.a16mediaplayer
+package com.example.a16mediaplayer.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.a16mediaplayer.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
