@@ -1,21 +1,28 @@
 package com.example.a16mediaplayer.view.dest
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.example.a16mediaplayer.R
 import com.example.a16mediaplayer.base.BaseFragment
 import com.example.a16mediaplayer.databinding.FragmentMainBinding
-
-class MainFragment:BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
+import com.example.a16mediaplayer.view.adapter.PlayListPageAdapter
+import com.google.android.material.tabs.TabLayoutMediator
+//컨트롤 + 알트 O 시 임포트 최적화
+class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
     override fun FragmentMainBinding.bindingViewData() {
-        TODO("Not yet implemented")
+        viewPager.adapter = PlayListPageAdapter(this@MainFragment)
+
+        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+            tab.text = when (position) {
+                0 -> "Ringtone"
+                1 -> "App"
+                2 -> "Music"
+                else -> ""
+            }
+
+        }.attach()
     }
 
     override fun FragmentMainBinding.setEventListener() {
-        TODO("Not yet implemented")
+
     }
 
 }
