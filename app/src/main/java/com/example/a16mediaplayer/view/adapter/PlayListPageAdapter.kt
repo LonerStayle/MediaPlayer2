@@ -15,10 +15,10 @@ class PlayListPageAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
     override fun createFragment(position: Int): Fragment = PlayListFragment().apply {
         arguments = bundleOf(
             "root" to when (position) {
-                0 -> "root"
-                1 -> "root"
-                2 -> "root"
-                else -> "root"
+                0 -> "ringtone"
+                1 -> "user"
+                2 -> "app"
+                else -> ""
             }
         )
     }
