@@ -43,11 +43,10 @@ class PlayListViewModel(context: Context) : ViewModel() {
     fun getPlayList(root: String) {
         viewModelScope.launch {
             connectDeffered.await()
+
             mediaBrowser.getChildren(root, 0, 100, null).apply {
                 addListener(
-                    Runnable {
-                        _playList.postValue(get().mediaItems)
-                    },
+                     { _playList.postValue(get().mediaItems) },
                     Executors.newCachedThreadPool()
                 )
             }

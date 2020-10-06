@@ -45,7 +45,7 @@ dependencies {
     implementation arch_libraries
 
     annotationProcessor annotation
-
+    kapt kapt_librarise
     testImplementation test_libraries
     androidTestImplementation android_test_libraries
 }

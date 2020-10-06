@@ -52,7 +52,7 @@ class MediaService : MediaLibraryService() {
                     params: LibraryParams?
                 ): LibraryResult = LibraryResult(
                     LibraryResult.RESULT_SUCCESS,
-                    MediaLibrary.playList(applicationContext),
+                    MediaLibrary.playList(applicationContext,parentId),
                     null
                 )
             }).build()
